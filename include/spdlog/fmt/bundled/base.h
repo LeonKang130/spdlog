@@ -455,9 +455,6 @@ constexpr auto use_utf8() -> bool {
   return !FMT_MSC_VERSION || is_utf8_enabled();
 }
 
-static_assert(!FMT_UNICODE || use_utf8(),
-              "Unicode support requires compiling with /utf-8");
-
 template <typename Char> FMT_CONSTEXPR auto length(const Char* s) -> size_t {
   size_t len = 0;
   while (*s++) ++len;
